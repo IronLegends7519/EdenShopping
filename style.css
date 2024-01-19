@@ -1,11 +1,88 @@
+
 h1{
   text-align: center;
 }
+#app{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 article{
-  width: 20vw;
+  position: absolute;
+  top:0px;
+  margin-top: 20vh;
+  padding: 5%;
+  height: 50vh;
+  width: 50vw;
   text-align: center;
   border: solid;
 }
-img{
-  width: 25%;
+.img{
+  max-height: 250px;
+  max-width: 400px;
+  margin: 5%;
+}
+.leftArrow{
+  position: absolute;
+  background-image: url('/img/icon-arrow-left.svg');
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-position: 50%;
+  margin-top:40vh;
+  width: 100px;
+  height: 100px;
+  padding: 50px;
+  left: 200px;
+  cursor: pointer;
+}
+
+.rightArrow{
+  position: absolute;
+  background-image: url('/img/icon-arrow-right.svg');
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-position: 50%;
+  margin-top: 40vh;
+  width: 100px;
+  height: 100px;
+  padding: 50px;
+  right: 200px;
+  cursor: pointer;
+}
+p{
+  font-size: 25px;
+}
+
+#cool{
+  position: relative;
+  padding: 5%;
+  top:0px;
+  margin-top: 10vh;
+  z-index: 1;
+  border: solid;
+  display: flex;
+  height: 50vh;
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+  left : 310px
+  
+}
+.imgId{
+  max-height: 100px;
+  max-width: 150px;
+  margin: 5%;
+}
+#btnClose{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: black;
+  height: 20px;
+  width: 20px;
+  background-image: url('/img/icon-close.svg');
+  background-repeat: no-repeat;
 }
