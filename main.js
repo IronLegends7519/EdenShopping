@@ -9,7 +9,7 @@ const arrow = document.querySelector("#arrow")
 const divPhone = document.querySelector("#smartphones")
 const monnaie = "$";
 let a = 0; 
-let v = 0;
+let v = 0
 let products; 
 let imageResponse; 
 let responseAsJsonImage;
