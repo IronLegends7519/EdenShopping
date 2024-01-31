@@ -4,15 +4,16 @@ const body = document.querySelector('body');
 let left = document.querySelector("#left"); 
 let right = document.querySelector("#right"); 
 const coolId = document.querySelector("#cool");
-const filterCategory = document.querySelector("#filterCategorie")
+const filterCategory = document.querySelector("#filterCategorie");
+const arrow = document.querySelector("#arrow")
+const divPhone = document.querySelector("#smartphones")
 const monnaie = "$";
 let a = 0; 
-let i = 0;
+let v = 0;
 let products; 
 let imageResponse; 
 let responseAsJsonImage;
 let productsImage;
-let img;
 let imgBtn;
 let f = 1;
 let result;
@@ -40,98 +41,115 @@ category()
 
 
 filterCategory.addEventListener('click',()=>{
-  console.log(filterCategory.value)
+
   if(filterCategory.value === 'all'){
+    divPhone.style.display='none'
+    app.style.display = 'flex';
+    arrow.style.display='block';
     creerArticle(0);
     a=0
   }
 
   else if(filterCategory.value === 'smartphones'){
-    console.log('bonjour')
-    left.style.display = 'none';
-    right.style.display = 'none';
-    let article = document.createElement('article');
-    let h2 = document.createElement('h2');
-    img = document.createElement('img');
-    let p = document.createElement('p');
-  
-    img.setAttribute('src',products[0].images[0]); 
-    img.setAttribute('class', "img");
+    divPhone.textContent='';
+    app.style.display = 'none';
+    arrow.style.display='none';
+    divPhone.style.display='flex';
+    for(let n=0; n<5;n++){
+      console.log(products[n])
+      left.style.display = 'none';
+      right.style.display = 'none';
+      let article = document.createElement('article');
+      article.setAttribute('class','articlePhone')
+      let h2 = document.createElement('h2');
+      let img = document.createElement('img');
+      let p = document.createElement('p');
     
-    h2.textContent = products[0].title;
-    p.textContent = products[0].price + " " + monnaie;
-  
-    app.appendChild(article);
-    article.appendChild(h2);
-    article.appendChild(img);
-    article.appendChild(p);
-  
-    img.addEventListener('click', ()=>{creerDetail(i)});
-
-    function creerDetail(index){
-  
-      coolId.textContent='';
-  
-      let btnClose = document.createElement('button');
-  
-      btnClose.setAttribute('id','btnClose');
-  
-      coolId.appendChild(btnClose);
-        
-        let imgId = document.createElement('img');
-        let gauche = document.createElement('button');
-        let droite = document.createElement('button');
-        let paragrapheDescription = document.createElement('p');
-  
-        gauche.setAttribute('id', 'gauche');
-        droite.setAttribute('id','droite');
-        imgId.setAttribute('src', productsImage.images[index]);
-        imgId.setAttribute('class', "imgId");
-        paragrapheDescription.textContent = productsImage.description;
-  
-        coolId.appendChild(gauche);
-        coolId.appendChild(imgId);
-        coolId.appendChild(droite);
-        coolId.appendChild(paragrapheDescription);
+      img.setAttribute('src',products[n].images[0]); 
+      img.setAttribute('class', "imgPhone");
       
-      btnClose.addEventListener('click', ()=>{
+      h2.textContent = products[n].title;
+      p.textContent = products[n].price + " " + monnaie;
+    
+      divPhone.appendChild(article);
+      article.appendChild(h2);
+      article.appendChild(img);
+      article.appendChild(p);
+        let tableauImg = document.querySelectorAll('.imgPhone')
+        console.log(tableauImg[n])
+        console.log(n)
+      tableauImg[n].addEventListener('click', ()=>{
+        v=0
+        creerDetailPhone(v, n)
+      });
   
-          left.disabled = false;
-          right.disabled = false;
-          coolId.style.display = 'none';
-      })
-  
-        coolId.style.display = 'block';
-        left.disabled = 'true';
-        right.disabled = 'true';
-  
-  
-        let gaucheBtn = document.querySelector('#gauche');
-        let droiteBtn = document.querySelector('#droite');
-  
-        gaucheBtn.addEventListener('click', ()=>{
-  
-          if(i == 0){
-            i = productsImage.images.length-1;
-          }
-          else{
-            i--;
-          }
-          creerDetail(i);
-        })
+      function creerDetailPhone(index, o){
+        console.log(index)
+        console.log(o)
+        coolId.textContent='';
+    
+        let btnClose = document.createElement('button');
+    
+        btnClose.setAttribute('id','btnClose');
+    
+        coolId.appendChild(btnClose);
+          
+          let imgId = document.createElement('img');
+          let gauche = document.createElement('button');
+          let droite = document.createElement('button');
+          let paragrapheDescription = document.createElement('p');
+    
+          gauche.setAttribute('id', 'gauche');
+          droite.setAttribute('id','droite');
+          imgId.setAttribute('src', products[o].images[index]);
+          imgId.setAttribute('class', "imgId");
+          paragrapheDescription.textContent = products[o].description;
+    
+          coolId.appendChild(gauche);
+          coolId.appendChild(imgId);
+          coolId.appendChild(droite);
+          coolId.appendChild(paragrapheDescription);
         
-        droiteBtn.addEventListener('click', ()=>{
-  
-          if(i == productsImage.images.length-1){
-            i=0;
-          }
-          else{
-            i++;
-          }
-          creerDetail(i);
-        }) 
+        btnClose.addEventListener('click', ()=>{
+    
+            left.disabled = false;
+            right.disabled = false;
+            coolId.style.display = 'none';
+        })
+    
+          coolId.style.display = 'block';
+          left.disabled = 'true';
+          right.disabled = 'true';
+    
+    
+          let gaucheBtn = document.querySelector('#gauche');
+          let droiteBtn = document.querySelector('#droite');
+    
+          gaucheBtn.addEventListener('click', ()=>{
+            
+            if(v == 0){
+              v = products[n].images.length-1;
+            }
+            else{
+              v--;
+            }
+            creerDetailPhone(v,n);
+          })
+          
+          droiteBtn.addEventListener('click', ()=>{
+            console.log(n)
+            if(v == products[n].images.length-1){
+              v=0;
+            }
+            else{
+              v++;
+            }
+            creerDetailPhone(v,n);
+          }) 
+    }
+    
   }
-  console.log('hello')
+    
 }
   else if(filterCategory.value === 'laptops'){
     creerArticle(5)
@@ -170,7 +188,7 @@ async function creerArticle(index) {
     productsImage = responseAsJsonImage;
 
   app.textContent = '';
-
+  arrow.textContent="";
  left = document.createElement('button')
  right = document.createElement('button')
 
@@ -180,12 +198,13 @@ async function creerArticle(index) {
  right.setAttribute('id', 'right')
  right.setAttribute('class','rightArrow')
 
-  body.appendChild(left)
-  body.appendChild(right)
+  arrow.appendChild(left)
+  arrow.appendChild(right)
 
   let article = document.createElement('article');
+  article.setAttribute('class', 'article')
   let h2 = document.createElement('h2');
-  img = document.createElement('img');
+  let img = document.createElement('img');
   let p = document.createElement('p');
 
   img.setAttribute('src',products[index].images[0]); 
@@ -199,7 +218,7 @@ async function creerArticle(index) {
   article.appendChild(img);
   article.appendChild(p);
 
-  img.addEventListener('click', ()=>{creerDetail(i)});
+  img.addEventListener('click', ()=>{creerDetail(v)});
 
   const leftBtn = document.querySelector('#left')
   
@@ -211,7 +230,7 @@ leftBtn.addEventListener('click', ()=>{
   else { 
     a--; 
   } 
-  i=0;
+  v=0;
   creerArticle(a);
 }); 
 
@@ -224,13 +243,16 @@ leftBtn.addEventListener('click', ()=>{
     else { 
       a++;
     } 
-    i=0;
+    v=0;
     creerArticle(a); 
   });
 }
   function creerDetail(index){
-
+    console.log('bonjour')
     coolId.textContent='';
+    coolId.style.display = 'block';
+    left.disabled = 'true';
+    right.disabled = 'true';
 
     let btnClose = document.createElement('button');
 
@@ -261,9 +283,7 @@ leftBtn.addEventListener('click', ()=>{
         coolId.style.display = 'none';
     })
 
-      coolId.style.display = 'block';
-      left.disabled = 'true';
-      right.disabled = 'true';
+
 
 
       let gaucheBtn = document.querySelector('#gauche');
@@ -271,24 +291,24 @@ leftBtn.addEventListener('click', ()=>{
 
       gaucheBtn.addEventListener('click', ()=>{
 
-        if(i == 0){
-          i = productsImage.images.length-1;
+        if(v == 0){
+          v = productsImage.images.length-1;
         }
         else{
-          i--;
+          v--;
         }
-        creerDetail(i);
+        creerDetail(v);
       })
       
       droiteBtn.addEventListener('click', ()=>{
 
-        if(i == productsImage.images.length-1){
-          i=0;
+        if(v == productsImage.images.length-1){
+          v=0;
         }
         else{
-          i++;
+          v++;
         }
-        creerDetail(i);
+        creerDetail(v);
       }) 
   }
     
