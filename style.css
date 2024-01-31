@@ -2,12 +2,14 @@
 h1{
   text-align: center;
 }
+
 #app{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+
 article{
   position: absolute;
   top:0px;
@@ -18,12 +20,14 @@ article{
   text-align: center;
   border: solid;
 }
+
 .img{
   max-height: 250px;
   max-width: 400px;
   margin: 5%;
 }
-.leftArrow{
+
+#left{
   position: absolute;
   background-image: url('/img/icon-arrow-left.svg');
   background-repeat: no-repeat;
@@ -35,9 +39,11 @@ article{
   padding: 50px;
   left: 200px;
   cursor: pointer;
+  border: none;
+  background-color: white;
 }
 
-.rightArrow{
+#right{
   position: absolute;
   background-image: url('/img/icon-arrow-right.svg');
   background-repeat: no-repeat;
@@ -49,16 +55,19 @@ article{
   padding: 50px;
   right: 200px;
   cursor: pointer;
+  border: none;
+  background-color: white;
 }
+
 p{
   font-size: 25px;
 }
 
 #cool{
-  position: relative;
+  position: absolute;
   padding: 5%;
   top:0px;
-  margin-top: 10vh;
+  margin-top: 20vh;
   z-index: 1;
   border: solid;
   display: flex;
@@ -67,22 +76,58 @@ p{
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: black;
-  left : 310px
-  
+background-color: white;
+  left : 380px;
 }
+
 .imgId{
-  max-height: 100px;
-  max-width: 150px;
+  max-height: 250px;
+  max-width: 350px;
   margin: 5%;
+  margin-top: 10vh;
 }
+
 #btnClose{
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: black;
-  height: 20px;
-  width: 20px;
-  background-image: url('/img/icon-close.svg');
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Cross-image.svg/640px-Cross-image.svg.png');
   background-repeat: no-repeat;
+  border: none;
+  background-size: 100%;
+}
+
+#gauche{
+  position: absolute;
+  background-image: url('/img/icon-arrow-left.svg');
+  background-repeat: no-repeat;
+  border: none;
+  background-size: 50px;
+  background-position: 50%;
+  margin-top:20vh;
+  width: 100px;
+  height: 100px;
+  padding: 50px;
+  left: 200px;
+  cursor: pointer;
+  background-color: white;
+}
+
+#droite{
+  position: absolute;
+  background-image: url('/img/icon-arrow-right.svg');
+  background-repeat: no-repeat;
+  border: none;
+  background-size: 50px;
+  background-position: 50%;
+  margin-top: 20vh;
+  width: 100px;
+  height: 100px;
+  padding: 50px;
+  right: 200px;
+  cursor: pointer;
+  background-color: white;
 }
