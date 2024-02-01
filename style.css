@@ -44,8 +44,7 @@ body {
 .articleTrie{
   position: relative;
   top:0px;
-  padding-bottom: 10%;
-  height: 25vh;
+  height: 35vh;
   width: 25vw;
   text-align: center;
   border: solid;
@@ -205,8 +204,7 @@ background-color: white;
   height: 50vh;
 }
 #smartphones{
-
-  margin: 150px 0;
+  margin-top: 50px;
   grid-template-columns: repeat(3,35%);
   flex-wrap: wrap;
   align-items: center;
@@ -216,7 +214,7 @@ background-color: white;
 
 #laptops{
 
-  margin: 150px 0;
+  margin-top: 50px;
   grid-template-columns: repeat(3,35%);
   flex-wrap: wrap;
   align-items: center;
@@ -225,7 +223,7 @@ background-color: white;
 }
 #fragrances{
 
-  margin: 150px 0;
+  margin-top: 50px;
   grid-template-columns: repeat(3,35%);
   flex-wrap: wrap;
   align-items: center;
@@ -234,7 +232,7 @@ background-color: white;
 }
 #skincare{
 
-  margin: 150px 0;
+  margin-top: 50px;
   grid-template-columns: repeat(3,35%);
   flex-wrap: wrap;
   align-items: center;
@@ -242,7 +240,7 @@ background-color: white;
   gap: 1.5rem
 }
 #groceries{
-  margin: 150px 0;
+  margin-top: 50px;
   grid-template-columns: repeat(3,35%);
   flex-wrap: wrap;
   align-items: center;
@@ -250,7 +248,7 @@ background-color: white;
   gap: 1.5rem
 }
 #homeDecoration{
-  margin: 150px 0;
+  margin-top: 50px;
   grid-template-columns: repeat(3,35%);
   flex-wrap: wrap;
   align-items: center;
