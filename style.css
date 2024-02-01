@@ -1,6 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-h1{
+body {
+  background: linear-gradient(200deg, #6ca4be,#00ce45);
+  height: 100vh;
+}
+
+.divTitle{
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 #app{
@@ -9,19 +23,25 @@ h1{
   justify-content: center;
   align-items: center;
 }
-
+#filterCategorie{
+  background-color: #ffffff5a;
+  backdrop-filter: blur(3px);
+}
 .article{
   position: absolute;
   top:0px;
-  margin-top: 20vh;
-  padding: 5%;
-  height: 50vh;
+  margin-top: 30vh;
+  padding: 2%;
+  height: 55vh;
   width: 50vw;
   text-align: center;
-  border: solid;
+  border-radius: 15px;
   z-index: 1;
+  background-color: #ffffff5a;
+  backdrop-filter: blur(3px);
 }
-.articlePhone{
+
+.articleTrie{
   position: relative;
   top:0px;
   padding-bottom: 10%;
@@ -30,6 +50,12 @@ h1{
   text-align: center;
   border: solid;
 }
+.divSelect{
+  text-align: center;
+  align-items: center;
+  display: flex;
+  width: 50%;
+}
 
 .img{
   max-height: 250px;
@@ -37,6 +63,31 @@ h1{
   margin: 5%;
 }
 .imgPhone{
+  max-height: 150px;
+  max-width: 300px;
+  margin: 5%;
+}
+.imgLaptops{
+  max-height: 150px;
+  max-width: 300px;
+  margin: 5%;
+}
+.imgFragrances{
+  max-height: 150px;
+  max-width: 300px;
+  margin: 5%;
+}
+.imgSkincare{
+  max-height: 150px;
+  max-width: 300px;
+  margin: 5%;
+}
+.imgGroceries{
+  max-height: 150px;
+  max-width: 300px;
+  margin: 5%;
+}
+.imgHomeDecoration{
   max-height: 150px;
   max-width: 300px;
   margin: 5%;
@@ -55,7 +106,8 @@ h1{
   left: 200px;
   cursor: pointer;
   border: none;
-  background-color: white;
+  background-color: #ffffff5a;
+  backdrop-filter: blur(3px);
 }
 
 #right{
@@ -71,7 +123,8 @@ h1{
   right: 200px;
   cursor: pointer;
   border: none;
-  background-color: white;
+  background-color: #ffffff5a;
+  backdrop-filter: blur(3px);
 }
 
 p{
@@ -79,7 +132,7 @@ p{
 }
 
 #cool{
-  position: absolute;
+  position: fixed;
   padding: 5%;
   top:0px;
   margin-top: 20vh;
@@ -148,11 +201,55 @@ background-color: white;
 }
 #arrow{
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 50vh;
 }
 #smartphones{
 
+  margin: 150px 0;
+  grid-template-columns: repeat(3,35%);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem
+}
+
+#laptops{
+
+  margin: 150px 0;
+  grid-template-columns: repeat(3,35%);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem
+}
+#fragrances{
+
+  margin: 150px 0;
+  grid-template-columns: repeat(3,35%);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem
+}
+#skincare{
+
+  margin: 150px 0;
+  grid-template-columns: repeat(3,35%);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem
+}
+#groceries{
+  margin: 150px 0;
+  grid-template-columns: repeat(3,35%);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem
+}
+#homeDecoration{
   margin: 150px 0;
   grid-template-columns: repeat(3,35%);
   flex-wrap: wrap;
