@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: linear-gradient(200deg, #6ca4be,#00ce45);
+  background: linear-gradient(200deg, #1e4a87e2,#08af35c0);
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
+  min-height: 100vh;
 }
 
 .divTitle{
@@ -28,12 +34,8 @@ body {
   backdrop-filter: blur(3px);
 }
 .article{
-  position: absolute;
-  top:0px;
-  margin-top: 30vh;
-  padding: 2%;
-  height: 55vh;
-  width: 50vw;
+  /* padding: 2%; */
+  width: 50%;
   text-align: center;
   border-radius: 15px;
   z-index: 1;
@@ -47,13 +49,29 @@ body {
   height: 35vh;
   width: 25vw;
   text-align: center;
-  border: solid;
+  background-color: #ffffff5a;
+  backdrop-filter: blur(3px);
+  border-radius: 15px;
 }
 .divSelect{
   text-align: center;
   align-items: center;
   display: flex;
   width: 50%;
+  margin: 3% 0;
+}
+
+label {
+  margin-right: 15px;
+  font-size: 1.1rem;
+}
+
+select {
+  padding: 0.5rem 0 0.5rem 2%;
+  font-size: 1rem;
+  border-radius: 50px;
+  outline: none;
+  border: none;
 }
 
 .img{
@@ -94,35 +112,29 @@ body {
 
 #left{
   position: absolute;
-  background-repeat: no-repeat;
-  background-size: 50px;
-  background-position: 50%;
-  margin-top:40vh;
-  width: 100px;
-  height: 100px;
-  padding: 50px;
   left: 200px;
   cursor: pointer;
   border: none;
-  /* background-color: #ffffff5a;
-  backdrop-filter: blur(3px); */
-  background-color: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #right{
   position: absolute;
-  background-repeat: no-repeat;
-  background-size: 50px;
-  background-position: 50%;
-  margin-top: 40vh;
-  width: 100px;
-  height: 100px;
-  padding: 50px;
   right: 200px;
   cursor: pointer;
   border: none;
-  background-color: #ffffff5a;
-  backdrop-filter: blur(3px);
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  height: 5rem;
+  background: none;
 }
 
 p{
@@ -200,8 +212,8 @@ background-color: white;
 #arrow{
   position: relative;
   width: 100%;
-  height: 50vh;
 }
+
 #smartphones{
   margin-top: 50px;
   grid-template-columns: repeat(3,35%);

@@ -1,4 +1,3 @@
-
 const app = document.querySelector('#app');
 const body = document.querySelector('body');
 let left = document.querySelector("#left"); 
@@ -708,14 +707,17 @@ async function creerArticle(index) {
   arrow.appendChild(left)
   arrow.appendChild(right)
   
-  let iconLeft = document.createElement('i')
-  let iconRight = document.createElement('i')
+  let iconLeft = document.createElement('img')
+  let iconRight = document.createElement('img')
 
   left.appendChild(iconLeft)
   right.appendChild(iconRight)
 
-  iconLeft.setAttribute('class','fa-solid fa-angle-left')
-  iconRight.setAttribute('class','fa-solid fa-angle-right')
+  iconLeft.setAttribute('src','/img/chevron-left-solid.svg')
+  iconRight.setAttribute('src','/img/chevron-right-solid.svg')
+
+  iconLeft.setAttribute('class','arrowLeft arrow')
+  iconRight.setAttribute('class', 'arrowRight arrow')
 
   let article = document.createElement('article');
   article.setAttribute('class', 'article')
