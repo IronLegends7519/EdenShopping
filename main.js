@@ -53,7 +53,6 @@ filterCategory.addEventListener('click',()=>{
     divGroceries.style.display='none';
     divHomeDecoration.style.display='none';
     app.style.display = 'flex';
-    arrow.style.display='block';
     creerArticle(a);
   }
 
@@ -61,12 +60,13 @@ filterCategory.addEventListener('click',()=>{
 
     divPhone.textContent='';
     app.style.display = 'none';
-    arrow.style.display='none';
     divLaptops.style.display='none';
     divFragrances.style.display='none';
     divSkincare.style.display='none';
     divGroceries.style.display='none';  
     divHomeDecoration.style.display='none';  
+    left.remove
+    right.remove
     divPhone.style.display='flex';
 
     for(let n=0; n<5;n++){
@@ -162,7 +162,8 @@ filterCategory.addEventListener('click',()=>{
   else if(filterCategory.value === 'laptops'){
     divLaptops.textContent='';
     app.style.display = 'none';
-    arrow.style.display='none';
+    left.remove
+    right.remove
     divPhone.style.display='none';
     divSkincare.style.display='none';
     divGroceries.style.display='none';
@@ -266,7 +267,8 @@ filterCategory.addEventListener('click',()=>{
   else if(filterCategory.value === 'fragrances'){
     divFragrances.textContent='';
     app.style.display = 'none';
-    arrow.style.display='none';
+    left.remove
+    right.remove
     divPhone.style.display='none';
     divLaptops.style.display='none';
     divSkincare.style.display='none';
@@ -374,7 +376,8 @@ filterCategory.addEventListener('click',()=>{
   else if(filterCategory.value === 'skincare'){
     divSkincare.textContent='';
     app.style.display = 'none';
-    arrow.style.display='none';
+    left.remove
+    right.remove
     divPhone.style.display='none';
     divLaptops.style.display='none';
     divFragrances.style.display='none';
@@ -478,7 +481,8 @@ filterCategory.addEventListener('click',()=>{
   else if(filterCategory.value === 'groceries'){
     divGroceries.textContent='';
     app.style.display = 'none';
-    arrow.style.display='none';
+    left.remove
+    right.remove
     divPhone.style.display='none';
     divLaptops.style.display='none';
     divFragrances.style.display='none';
@@ -582,7 +586,8 @@ filterCategory.addEventListener('click',()=>{
   else if(filterCategory.value === 'home-decoration'){
     divHomeDecoration.textContent='';
     app.style.display = 'none';
-    arrow.style.display='none';
+    left.remove
+    right.remove
     divPhone.style.display='none';
     divLaptops.style.display='none';
     divFragrances.style.display='none';
@@ -694,7 +699,6 @@ async function creerArticle(index) {
     productsImage = responseAsJsonImage;
 
   app.textContent = '';
-  arrow.textContent="";
  left = document.createElement('button')
  right = document.createElement('button')
 
@@ -704,8 +708,8 @@ async function creerArticle(index) {
  right.setAttribute('id', 'right')
  right.setAttribute('class','rightArrow')
 
-  arrow.appendChild(left)
-  arrow.appendChild(right)
+  app.appendChild(left)
+  app.appendChild(right)
   
   let iconLeft = document.createElement('img')
   let iconRight = document.createElement('img')
@@ -828,8 +832,3 @@ leftBtn.addEventListener('click', ()=>{
         creerDetail(v);
       }) 
   }
-    
-
-
-
-  
